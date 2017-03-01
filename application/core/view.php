@@ -28,7 +28,6 @@ class View
 
         /* ************** базовый шаблон */
         $template_view = 'template.php';
-
         if($content_view == null || $content_view == ''){
             /* ************ caller для дефолтной вьюхи если не задана */
             $trace = debug_backtrace();
@@ -39,7 +38,6 @@ class View
             // вьюха для контента
             $content_view = $content_view.".php";
         }
-
             $templ = $this->view_path_folder."/".$template_view;
             if(is_file($templ))
         	    include($templ);

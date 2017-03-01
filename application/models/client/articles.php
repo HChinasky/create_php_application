@@ -10,6 +10,17 @@ use Lib\Lib_DateBase;
 class Model_Articles extends Model
 {
     /**
+     * @param $id
+     * @return mixed
+     */
+    public function getById($id){
+        $sql = 'SELECT * FROM article WHERE id = %s';
+        $result = Lib_DateBase::query($sql, $id);
+        $row = $result->fetch_assoc();
+        return $row;
+    }
+    
+    /**
      * 
      */
     public function get_articles(){
