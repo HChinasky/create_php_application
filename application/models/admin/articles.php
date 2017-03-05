@@ -8,6 +8,17 @@ use Lib\Registry;
 use Lib\DateBase;
 
 class Articles extends Model{
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function getById($id){
+        $sql = 'SELECT * FROM article WHERE id = %s';
+        $result = DateBase::query($sql, $id);
+        $row = $result->fetch_assoc();
+        return $row;
+    }
     /**
      * 
      */

@@ -152,8 +152,8 @@
  -->
          <script src="js/jquery-1.8.2.min.js"></script>
         <!-- jQuery UI 1.10.3 -->
-        <!--<script src="js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>-->
-        <!-- <script src="js/jquery-ui.min.js" type="text/javascript"></script> -->
+        <!-- <script src="js/jquery-ui-1.10.3.min.js" type="text/javascript"></script> -->
+        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
         <!-- Bootstrap -->
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <!-- Morris.js charts -->
@@ -179,9 +179,9 @@
         <script src="js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
  -->
         <!-- datepicker -->
-<!-- 
-        <script src="js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
- -->
+
+        <!-- <script src="js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script> -->
+
         <!-- Bootstrap WYSIHTML5 -->
         <!--<script src="js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>-->
 
@@ -192,7 +192,7 @@
 -->
         <!-- AdminLTE App -->
 <!-- <script src="js/AdminLTE/confirm-bootstrap.js"></script> -->
-<!-- <script src="js/AdminLTE/app.js" type="text/javascript"></script> -->
+<script src="js/app.js" type="text/javascript"></script>
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!--

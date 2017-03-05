@@ -11,11 +11,8 @@
                 <th>Превью</th>
                 <th>Дата</th>
                 <th class="anons_td">Анонс</th>
-<!--                 <th>Категория</th>
-<th></th>
-<th style=""></th> -->
+                <th></th>
             </tr>
-            <!--       ////////////////////////////////  Articles       //////////////////////////////       -->
             <? if (!empty($articles)): ?>
                 <? foreach ($articles as $key => $article): ?>
                     <tr>
@@ -31,25 +28,15 @@
                         </td>
                         <td><?= $article['date'] ?></td>
                         <td class="anons_td"><?= $article['anons'] ?>...</td>
-<!--                         <td class="category_td">
-    <?//= $article['name'] ?>
-</td>
-<td>
-    <a href="/admin/articles/edit/<?= $article['id'] ?>">
-        <span class="glyphicon glyphicon-edit"></span>
-    </a>
-</td>
-<td>
-    <a href="/admin/articles/delete/<?= $article['id'] ?>" class="delete_item"
-       data-confirm-title="Удалить запись?"
-       data-confirm-message="Вы действительно хотите удалить эту запись?">
-        <span class="glyphicon glyphicon-trash"></span>
-    </a>
-</td> -->
+
+                        <td>
+                            <a href="/admin/articles/article/<?= $article['id'] ?>">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+                        </td>
                     </tr>
                 <? endforeach ?>
             <? endif ?>
-            <!--       ////////////////////////////////  end   //////////////////////////////       -->
         </table>
         <div class="clearfix"></div>
     </div>
