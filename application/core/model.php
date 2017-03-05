@@ -2,9 +2,9 @@
 
 namespace Core;
 
-use Lib\Lib_DateBase;
+use Lib\DateBase;
 
-class Model extends Lib_DateBase
+class Model extends DateBase
 {
     /**
      *

@@ -1,17 +1,18 @@
 <?php 
 
-namespace Client;
+namespace Controllers\Client;
 
 use Core\Controller;
+use Models\Client\Articles as Articles1;
 
-class Controller_Articles extends Controller
+class Articles extends Controller
 {
     /**
      *
      */
-    function action_index()
+    function index()
     {
-        $model = new Model_Articles();
+        $model = new Articles1();
         $articles = $model->get_articles();
         $data = array(
             'breadcrumb' => 'Главная',
@@ -24,7 +25,7 @@ class Controller_Articles extends Controller
     /**
      * @param array $args
      */
-    function action_article(array $args = null){
+    function article(array $args = null){
         $id = (isset($args[0])? $args[0]: "");
         $model = new Model_Articles();
         $article = $model->getById($id);

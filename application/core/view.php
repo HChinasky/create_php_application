@@ -21,7 +21,6 @@ class View
      */
     function generate($content_view, $data = null)
     {
-        
         if(is_array($data)) {
             extract($data);
         }
@@ -32,7 +31,7 @@ class View
             /* ************ caller для дефолтной вьюхи если не задана */
             $trace = debug_backtrace();
             $caller = $trace[1]['function'];
-            $template = str_replace("action_", "", $caller);
+            $template = $caller;
             $content_view = strtolower($template).".php";
         }else{
             // вьюха для контента

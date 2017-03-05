@@ -2,7 +2,7 @@
 
 namespace Lib;
 
-class Lib_DateBase {
+class DateBase {
 
     /**
      * @param $query
@@ -11,7 +11,7 @@ class Lib_DateBase {
 	function query($query)
 	{
 		// получаем объект mysqli
-		$mysqli = Lib_Registry::get('mysqli');
+		$mysqli = Registry::get('mysqli');
 		// если запрос с параметрами
 		if(($num_args = func_num_args()) > 1){
 			$arg  = func_get_args();
@@ -24,7 +24,7 @@ class Lib_DateBase {
 			$query = vsprintf($query,$arg);	
 		}
 		// выполняем запрос
-        $sql = Lib_Registry::get('mysqli')->query($query);
+        $sql = Registry::get('mysqli')->query($query);
         if(preg_match('`^(INSERT|UPDATE|DELETE|REPLACE)`i',$query,$null)){
 			if($sql = $mysqli->affected_rows){
 				return $sql;
@@ -49,7 +49,7 @@ class Lib_DateBase {
 	{
 		if(is_array($array)){
 			$part_query = '';
-			$mysqli = Lib_Registry::get('mysqli');
+			$mysqli = Registry::get('mysqli');
 			foreach($array as $index=>$value){
 				$part_query .= sprintf(" %s = '%s'".$_devide,$index,$mysqli->real_escape_string($value));
 			}
@@ -92,6 +92,6 @@ class Lib_DateBase {
      */
 	function insert_id()
 	{
-		return Lib_Registry::get('mysqli')->insert_id;
+		return Registry::get('mysqli')->insert_id;
 	}
 }

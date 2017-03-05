@@ -44,7 +44,7 @@ class Route
         if (empty($route)) {
         /* ******************* Default directions ******** */
             $controller = 'articles';
-            $action = 'action_index';
+            $action = 'index';
             $controller_path = $this->controller_path_folder =  "application/controllers/$this->namespace/";
             $file = $controller_path.$controller.".php";
         }
@@ -78,9 +78,9 @@ class Route
                 $file = $fullpath."/$part.php";
             $action = array_shift($parts);
             if(!$action)
-                $action = 'action_index';
+                $action = 'index';
             else
-                $action = "action_$action";
+                $action = "$action";
             $args = $parts;
         }
     }
@@ -105,7 +105,7 @@ class Route
         } 
         /* ****** получаем класс ** */
         $controller = ucfirst($controller);
-        $class = ucfirst($this->namespace).'\Controller_' . $controller;
+        $class = 'Controllers\\'.ucfirst($this->namespace).'\\' . $controller;
         // создаем экземпляр
         $controller = new $class($this->controller_path_folder);
         if (is_callable(array($controller, $action)) == false) {

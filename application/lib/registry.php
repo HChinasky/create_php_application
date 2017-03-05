@@ -2,7 +2,7 @@
 
 namespace Lib;
 
-class Lib_Registry {
+class Registry {
     static private $data = array();
     static public function set($key, $value) {
         self::$data[$key] = $value;

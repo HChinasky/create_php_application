@@ -1,31 +1,30 @@
 <?php 
 
-namespace Models\Client;
+
+namespace Models\Admin;
 
 use Core\Model;
 use Lib\Registry;
 use Lib\DateBase;
 
+class Categories extends Model{
 
-class Articles extends Model
-{
     /**
      * @param $id
      * @return mixed
      */
     public function getById($id){
-        $sql = 'SELECT * FROM article WHERE id = %s';
+        $sql = 'SELECT * FROM category WHERE id = %s';
         $result = DateBase::query($sql, $id);
         $row = $result->fetch_assoc();
         return $row;
     }
-    
     /**
      * 
      */
-    public function get_articles(){
+    public function get_categories(){
                 
-        $sql = 'SELECT * FROM article';
+        $sql = 'SELECT * FROM category';
 
         $result = DateBase::query($sql);
         $row2 = array();
@@ -36,3 +35,5 @@ class Articles extends Model
         return $row2;
     }
 }
+
+ ?>
