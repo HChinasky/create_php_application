@@ -44,4 +44,12 @@ class View
                 die("template_view $templ not found!!");
     }
 
+    /**
+     * @param string $url
+     */
+    public function redirect($url = '')
+    {
+        header("Location: " . $url);
+    }
+
 }

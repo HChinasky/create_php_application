@@ -191,8 +191,8 @@
         <script src="js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
 -->
         <!-- AdminLTE App -->
-<!-- <script src="js/AdminLTE/confirm-bootstrap.js"></script> -->
-<script src="js/app.js" type="text/javascript"></script>
+<script src="js/confirm-bootstrap.js"></script>
+<script src="js/app.js?v=2" type="text/javascript"></script>
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!--

@@ -2003,6 +2003,10 @@ p{
 .small_pics_container{
     clear: both;
 }
+.small_pics_container img{
+	width: 200px;
+	display: inline-block;
+}
 
 
 /* ********* navbar */

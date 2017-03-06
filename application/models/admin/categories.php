@@ -34,6 +34,40 @@ class Categories extends Model{
         if(empty($row2))return;
         return $row2;
     }
+
+    /**
+     * 
+     */
+    public function edit($data = null){
+        if(!empty($data)){
+            $sql_articles = 'UPDATE category SET';
+            $where = 'WHERE id='.$data['id'];
+            $result = DateBase::build_query($sql_articles, $data, $where);
+            return $result;
+        }
+    }
+
+    /**
+     * 
+     */
+    public function add($data = null){
+        if(!empty($data)){
+            $sql_articles = 'INSERT INTO category SET';
+            $result = DateBase::build_query($sql_articles, $data);
+            return $result;
+        }
+    }
+
+    /**
+     * 
+     */
+    public function delete($id = null){
+        if(!empty($id)){
+            $sql = 'DELETE FROM category WHERE id = %s';
+            $result = DateBase::query($sql, $id);
+            return $result;
+        }
+    }
 }
 
  ?>

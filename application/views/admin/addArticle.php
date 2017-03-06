@@ -1,28 +1,22 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: valiev
- * Date: 08.02.2016
- * Time: 14:43
- */
-?>
 <!-- Left col -->
-<section class="col-lg-12 connectedSortable">
+<section class="col-lg-10 connectedSortable">
     <!-- quick email widget -->
     <div class="box box-info">
+        <div class="box-header">
+            <h3 class="box-title">Добавить статью</h3>
+            <!-- tools box -->
+            <div class="pull-right box-tools">
+                <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i
+                        class="fa fa-times"></i></button>
+            </div>
+            <!-- /. tools -->
+        </div>
         <div class="box-body">
-            <h3 class="box-title">Редактировать статью</h3>
             <!--       ////////////////////////////////  form     //////////////////////////////       -->
-            <form action="/admin/articles/article/<?= $article['id'] ?>" method="post" name="form1" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?= $article['id'] ?>">
+            <form action="/admin/articles/add" method="post" name="add_article" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="title" placeholder="" value="<?= $article['title'] ?>"/>
+                    <input type="text" class="form-control" name="title" placeholder="Название статьи"/>
                 </div>
-                <?= $article['image'] ?>
-
-                <div class="callout callout-info"><span class="glyphicon glyphicon-paperclip"></span> 
-                </div>
-
                 <!--          datepicker          -->
                 <div class="form-group">
                     <label>Дата:</label>
@@ -31,15 +25,16 @@
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" class="form-control pull-right" id="datepicker" name="date"
-                               value="<?= $article['date'] ?>"/>
+                        <input type="text" class="form-control pull-right" id="datepicker" name="date">
                     </div>
                     <!-- /.input group -->
                 </div>
-                <!--           anons             -->
-                <p class="lead">Анонс:</p>
-                <textarea name="anons" id="anons" cols="30" rows="10"><?= $article['anons'] ?></textarea>
-                <!--            HTML editor            -->
+                <!--         anons           -->
+                <div class="form-group">
+                    <label for="anons">Анонс</label><br/>
+                    <textarea name="anons" id="anons"></textarea>
+                </div>
+                <!--          text description          -->
                 <div class='box'>
                     <div class='box-header'>
                         <h3 class='box-title'>Текст статьи</h3>
@@ -57,42 +52,23 @@
                         <div>
                             <textarea name="description" class="textarea" id="editor1"
                                       placeholder="Place some text here"
-                                      style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
-                                <?= $article['description'] ?>
-                            </textarea>
+                                      style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                         </div>
                     </div>
                 </div>
-                <!-- Select multiple category-->
+                <!-- Select multiple-->
                 <div class="form-group">
                     <label>Выберите категорию:</label>
                     <?=$categories;?>
                 </div>
                 <div class="form-group">
-                    <? if (isset($article['mess'])): ?>
-                        <div class="alert alert-danger alert-dismissible">
-                            <?= $article['mess']; ?>
-                        </div>
-                    <? endif ?>
                     <label for="exampleInputFile">Загрузка файлов</label>
-                    <!--        error mess for pictures                -->
-                    <? if (!empty($article['mess'][0])) {
-                        foreach ($article['mess'] as $mess) {
-                            echo '
-                                    <div class="alert alert-danger alert-dismissible">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                        <span><i class="icon fa fa-ban"></i></span>
-                                        ' . $mess . '
-                                    </div>
-                                    ';
-                        }
-                    }?>
                     <input name="image[]" type="file" multiple="multiple" id="exampleInputFile">
 
                     <p class="help-block">Выберите файлы для загрузки</p>
                 </div>
                 <div class="box-footer clearfix">
-                    <button type="submit" class="pull-right btn btn-default" name="send">Редактировать <i
+                    <button type="submit" class="pull-right btn btn-default" name="send">Добавить <i
                             class="fa fa-arrow-circle-right"></i></button>
                 </div>
             </form>
